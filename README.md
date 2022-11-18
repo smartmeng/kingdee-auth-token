@@ -1,1 +1,1 @@
-# kingdee_auth_token
+# kingdee-auth-token
