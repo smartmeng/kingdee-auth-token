@@ -35,7 +35,7 @@ let getQueryString = function (queryString) {
     return queryStringResult
 }
 
-let getSignature = function ({path, method, headers, queryString, clientSecret}) {
+let getSignature = function ({ path, method, headers, queryString, clientSecret }) {
     path = encodeURIComponent(path)
 
     queryString = getQueryString(queryString)
@@ -86,16 +86,4 @@ let getKingdeeAuthToken = async function ({ appKey, appSecret, clientID, clientS
     return result.data
 }
 
-exports.handler = async (event, context) => {
-    try {
-        const appKey = ''
-        const appSecret = ''
-        const clientID = ''
-        const clientSecret = ''
-        let result = await getKingdeeAuthToken({ appKey, appSecret, clientID, clientSecret })
-        return result
-    } catch (err) {
-        console.log(err)
-        return err
-    }
-}
+module.exports = getKingdeeAuthToken;
